@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aastha - BE CSE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #faf7f7;
+    color: #514346;
+}
+
+.container {
+    width: 96%;
+    height: 95vh;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90px 1fr 90px;
+    background: #f1e5e7;
+    border: 2px solid #d9c5c9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header {
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    background: #fcf9f9;
+    border-bottom: 2px solid #d9c5c9;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #66585c;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #b87884;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    background: #f7eff0;
+    border-right: 2px solid #d9c5c9;
+}
+
+.left-content {
+    max-width: 460px;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #b87884;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+h1 span {
+    color: #b87884;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #75676b;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 23px;
+    background: #c99da5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: #b98791;
+    transform: translateY(-3px);
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    background: #f1e5e7;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #d9b8be;
+    color: #514346;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.box:hover {
+    background: #cfa8af;
+    transform: translateY(-6px);
+}
+
+footer {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fcf9f9;
+    border-top: 2px solid #d9c5c9;
+}
+
+.footer-box {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    font-size: 14px;
+    color: #75676b;
+}
+
+.footer-box:first-child {
+    border-right: 2px solid #d9c5c9;
+}
+
+.footer-box span {
+    color: #b87884;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.message {
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%, 80px);
+    background: #514346;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 7px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 700px) {
+    .container {
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px auto auto 70px;
+    }
+
+    header, footer {
+        grid-column: 1;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .left {
+        min-height: 400px;
+        border-right: none;
+        border-bottom: 2px solid #d9c5c9;
+    }
+
+    .right {
+        min-height: 350px;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .box {
+        width: 125px;
+        height: 125px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <div class="logo">AASTHA</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="left" id="home">
+    <div class="left-content">
+        <div class="small-text">BE-CSE STUDENT</div>
+
+        <h1>Hello, I'm <span>Aastha</span></h1>
+
+        <p>
+            I am a BE-CSE student who enjoys creating
+            websites, learning new technologies and
+            solving problems through code.
+        </p>
+
+        <button class="btn" onclick="welcome()">
+            Explore More
+        </button>
+    </div>
+</section>
+
+<section class="right" id="projects">
+
+    <div class="box" onclick="showMessage('Creative Space ✨')">
+        Creative<br>Space
+    </div>
+
+    <div class="box" onclick="showMessage('My Projects 🚀')">
+        My<br>Projects
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-box" id="about">
+        BE-CSE Student
+    </div>
+
+    <div class="footer-box" id="contact">
+        Aastha <span>© 2026</span>
+    </div>
+</footer>
+
+</div>
+
+<div class="message" id="message"></div>
+
+<script>
+function showMessage(text) {
+    const message = document.getElementById("message");
+    message.textContent = text;
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2200);
+}
+
+function welcome() {
+    showMessage("Welcome to Aastha's website! 🌸");
+}
+</script>
+
+</body>
+</html>
