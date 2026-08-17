@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aastha BE-CSE</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eee2ff;
+            min-height: 100vh;
+        }
+        .hero {
+            min-height: 100vh;
+
+            background: #eee2ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 80px 20px;
+        }
+        .dots {
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            background-image: radial-gradient(
+                #b98df5 3px,
+                transparent 3px
+            );
+
+            background-size: 20px 20px;
+
+            opacity: 0.65;
+        }
+
+        .dots-left {
+            left: 45px;
+            top: 55px;
+        }
+
+        .dots-right {
+            right: 45px;
+            bottom: 45px;
+        }
+        .circle {
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: #dfc6ff;
+
+            left: -110px;
+            bottom: -130px;
+        }
+        .circle-outline {
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border: 3px dashed #c7a8ed;
+
+            border-radius: 50%;
+
+            right: 30px;
+            top: 300px;
+
+            opacity: 0.8;
+        }
+        .card {
+            width: 930px;
+
+            min-height: 650px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            padding: 85px;
+
+            z-index: 2;
+
+            box-shadow:
+                25px 25px 0 #6838e8,
+                0 25px 50px rgba(67, 35, 140, 0.18);
+        }
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            left: 38px;
+            top: 40px;
+
+            width: 3px;
+
+            height: calc(100% - 80px);
+
+            background: #6536e7;
+
+            border-radius: 10px;
+        }
+        .tag {
+            position: absolute;
+
+            right: 45px;
+            top: -35px;
+
+            background: #6035e8;
+
+            color: white;
+
+            padding: 17px 28px;
+
+            border: 4px solid #111;
+
+            border-radius: 10px;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            transform: rotate(4deg);
+
+            box-shadow: 6px 6px 0 #111;
+        }
+        .main-content {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 35px;
+        }
+
+        .icon {
+            width: 115px;
+            height: 115px;
+
+            background: #f0e8ff;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-shrink: 0;
+
+            color: #6637e8;
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 12px 25px rgba(90, 40, 200, 0.12);
+        }
+
+        .heading h1 {
+            font-size: 50px;
+
+            line-height: 1.02;
+
+            color: #111536;
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+        }
+
+        .heading h1 span {
+            color: #6035e8;
+        }
+
+        .small-line {
+            width: 70px;
+            height: 5px;
+
+            background: #6637e8;
+
+            border-radius: 10px;
+
+            margin-bottom: 28px;
+        }
+
+        .description {
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #252943;
+
+            max-width: 620px;
+
+            margin-bottom: 20px;
+        }
+
+        .line {
+            width: 110px;
+            height: 3px;
+
+            background: #6637e8;
+
+            margin: 28px 0 38px;
+
+            position: relative;
+        }
+
+        .line::after {
+            content: "";
+
+            width: 10px;
+            height: 10px;
+
+            background: #6637e8;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            right: -5px;
+
+            top: -4px;
+        }
+
+
+        .features {
+            display: flex;
+
+            gap: 20px;
+
+            margin-bottom: 38px;
+        }
+
+
+        .feature {
+            flex: 1;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding-right: 20px;
+
+            border-right: 1px solid #d8d8d8;
+        }
+
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: #f0e8ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #6035e8;
+
+            font-size: 20px;
+
+            flex-shrink: 0;
+        }
+
+
+        .feature h3 {
+            font-size: 14px;
+
+            color: #111536;
+
+            margin-bottom: 5px;
+        }
+
+
+        .feature p {
+            font-size: 12px;
+
+            line-height: 1.4;
+
+            color: #555;
+
+            max-width: 150px;
+        }
+        .connect-btn {
+            background: #15143b;
+
+            color: white;
+
+            border: none;
+
+            padding: 17px 28px;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 25px rgba(96, 53, 232, 0.30);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .connect-btn span {
+            color: #e86cff;
+
+            font-size: 25px;
+
+            margin-left: 12px;
+
+            vertical-align: middle;
+        }
+
+
+        .connect-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 17px 32px rgba(96, 53, 232, 0.40);
+        }
+
+        .small-dots {
+            position: absolute;
+
+            right: 80px;
+            bottom: 100px;
+
+            width: 90px;
+            height: 90px;
+
+            background-image: radial-gradient(
+                #a979ef 3px,
+                transparent 3px
+            );
+
+            background-size: 18px 18px;
+
+            transform: rotate(-15deg);
+
+            opacity: 0.7;
+        }
+
+        @media (max-width: 950px) {
+
+            .card {
+                width: 90%;
+
+                padding: 70px 50px;
+            }
+
+            .heading h1 {
+                font-size: 42px;
+            }
+
+            .features {
+                flex-direction: column;
+            }
+
+            .feature {
+                border-right: none;
+
+                border-bottom: 1px solid #ddd;
+
+                padding-bottom: 15px;
+            }
+
+            .feature:last-child {
+                border-bottom: none;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .card {
+                width: 95%;
+
+                padding: 60px 30px;
+
+                box-shadow:
+                    12px 12px 0 #6838e8;
+            }
+
+            .card::before {
+                left: 15px;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .icon {
+                width: 85px;
+                height: 85px;
+
+                font-size: 30px;
+            }
+
+            .heading h1 {
+                font-size: 34px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .tag {
+                right: 15px;
+
+                font-size: 13px;
+
+                padding: 12px 18px;
+            }
+
+            .circle-outline {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <section class="hero">
+
+        <div class="dots dots-left"></div>
+
+        <div class="dots dots-right"></div>
+
+        <div class="circle"></div>
+
+        <div class="circle-outline"></div>
+
+        <div class="card">
+
+
+            <div class="tag">
+                AASTHA BE-CSE
+            </div>
+            <div class="main-content">
+
+                <div class="icon">
+                    &lt;/&gt;
+                </div>
+
+                <div class="heading">
+
+                    <h1>
+                        I DESIGN.<br>
+                        I CODE.<br>
+                        <span>I SOLVE.</span>
+                    </h1>
+
+                    <div class="small-line"></div>
+
+                    <p class="description">
+
+                        Passionate about building intuitive,
+                        accessible, and user-friendly web
+                        experiences. Turning ideas into
+                        real-world solutions through clean
+                        code and creative design.
+
+                    </p>
+
+                    <div class="line"></div>
+
+                    <div class="features">
+
+
+                        <!-- Creative -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                💡
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    CREATIVE
+                                </h3>
+
+                                <p>
+                                    Turning ideas into
+                                    impactful designs.
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                &lt;/&gt;
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    DEVELOPER
+                                </h3>
+
+                                <p>
+                                    Writing clean, efficient
+                                    and scalable code.
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                ♙
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    PROBLEM SOLVER
+                                </h3>
+
+                                <p>
+                                    Solving problems with
+                                    logic and innovation.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <button
+                        class="connect-btn"
+                        onclick="connect()">
+
+                        LET'S CONNECT
+
+                        <span>→</span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+            <div class="small-dots"></div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        function connect() {
+
+            alert("Let's connect! 🚀");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
