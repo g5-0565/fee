@@ -1,0 +1,23 @@
+Q1. What do you know about functions?
+ans. 1.A function is a block of code that performs a specific task.
+     2.Functions help in code reusability.
+     3.A function can take parameters and can return a value.
+
+Q2. What is layout?
+ans. 1.Layout means arranging elements on a webpage.
+     2.It decides where text, images, buttons, and other elements will appear.
+     3.Common layout methods are Flexbox, Grid, and Positioning.
+
+Q3.What do you know about flex layout?
+ans. 1.Flexbox is a CSS layout system and it is mainly used for arranging elements in one direction.
+     2.t helps with alignment, spacing, and positioning.
+     3.Its properties include display: flex, flex-direction, justify-content, and align-items.
+
+Q4. what is the need of grid layout?
+ans. 1.CSS Grid is used to create two-dimensional layouts.
+     2.It can arrange elements in rows and columns.
+     
+Q5. what is use of Github?
+ans. 1.GitHub is a platform used to store and manage code online.
+    2.Developers can upload, update, and track their projects.
+    3.It allows multiple people to work on the same project.
