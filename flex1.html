@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Prachi">
+    <title>Flex Box</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Courgette", cursive;
+            font-size: 16px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        section {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Header and Footer */
+        .box {
+            background-color: rgb(83, 11, 4);
+            color: white;
+        }
+
+        /* Main Area */
+        .main {
+            background-color: rgb(245, 248, 246);
+            color: #333;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Makes 2 rows */
+            flex-wrap: wrap;
+
+            gap: 30px;
+            padding: 40px 20px; 
+        }
+
+        /* Four Red Boxes */
+        .content-box {
+            
+            width: 245px;
+            height: 185px;
+
+            background-color: rgb(104, 14, 6);
+            color: white;
+
+            border: 5px solid black;
+            box-shadow: 8px 8px 0px black;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="box" style="height: 10vh;">
+        G5 Sem 3
+    </section>
+
+    <!-- Main Content -->
+    <section class="main" style="height: 80vh;">
+
+        <div class="content-box">
+            BOX 01
+        </div>
+
+        <div class="content-box">
+            BOX 02
+        </div>
+
+        <div class="content-box">
+            BOX 03
+        </div>
+
+        <div class="content-box">
+            BOX 04
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <section class="box" style="height: 10vh; width: 100%;">
+        Aastha Garcha 2510990565
+    </section>
+
+</body>
+</html>
