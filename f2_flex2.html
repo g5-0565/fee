@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Prachi">
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100dvh;
+            font-family: "Courgette";
+            font-size: 16px;
+            background-color: white;
+            color: white;
+        }
+        section{
+            padding: 10px;
+        }
+        .box{
+            background-color: rgb(8, 40, 78);
+        }
+        .fc{
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="box" style="height: 10vh">G5 Sem 3</section>
+    <section class="fc" style="height: 80vh ; background-color: white;">
+        <main class="box" style="height: 150px; width: 200px; padding:10px">
+            <center>Main-1</center>
+        </main>
+        <main class="box" style="height: 150px; width: 200px; padding: 10px">
+            <center>Main-2</center>
+        </main>
+    </section>
+    <section
+        class="box"
+        style="position: absolute; bottom: 0; left:0; height: 10vh;width:100%"
+    >
+    Aastha Garcha 2510990565
+    </section>
+
+    </body>
+</body>
+</html>
