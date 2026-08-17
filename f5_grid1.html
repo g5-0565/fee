@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Prachi">
+    <title>Grid Styling</title>
+    <link rel="stylesheet" href="">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100dvh;
+            font-family: "Courgette";
+            font-size: 16px;
+            background-color: white;
+            color: white;
+        }
+        section{
+            padding: 10px;
+        }
+        .box{
+            background-color: #4a0d03;
+            color: white;
+            padding: 1rem;
+        }
+        .gc{
+            display: grid;
+            gap: 0.5rem;
+            grid-template-columns: 150px 150px;
+            grid-template-rows: repeat(3,150px);
+            place-content: center;
+        }
+        @media (min-width: 360px){
+            .gc{
+                grid-template-columns: repeat(2,150px);
+                grid-template-rows: repeat(4,100px);
+            }
+            #m7{
+                grid-column: 1/-1;
+            }
+        }
+        @media (min-width: 767px){
+            .gc{
+                grid-template-columns: repeat(3,200px);
+                grid-template-rows: repeat(3,150px);
+            }
+        }
+        @media (min-width: 1024px){
+            .gc{
+                grid-template-columns: repeat(4,250px);
+                grid-template-rows: repeat(2,250px);
+                #m6{
+                    grid-column: 2/-2;
+                }
+                #m7{
+                    grid-column:4/-1;
+                }
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <section class="box" style="height: 10vh">
+        <span style="font-size: 2.5rem; margin-right: 1rem;">&#9812</span>
+        Header/Navbar
+    </section>
+    <section
+        class="box gc"
+        style="height: 80vh;background-color: white;"
+        >
+    <main class="box" id="m1">Content-1</main>
+    <main class="box" id="m2">Content-2</main>
+    <main class="box" id="m3">Content-3</main>
+    <main class="box" id="m4">Content-4</main>
+    <main class="box" id="m5">Content-5</main>
+    <main class="box" id="m6">Content-6</main>
+    <main class="box" id="m7">Content-7</main>
+    </section>
+    <section class="box" style="height: 10vh">
+        <span style="font-size: 2rem; margin-right: 1rem;">&#9776</span>
+        
+    </section>
+    </body>
+</body>
+</html>
