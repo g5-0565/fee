@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            /* font-family: Arial, sans-serif; */
+            font-family: "Courgette", cursive;
+            background: linear-gradient(135deg, #e8c5e8, #c9a7d8);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header,
+        footer {
+            height: 70px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: blue;
+        }
+
+        .fcx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fcy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg1 {
+            background-color: #8f5fa3;
+            /* background-color: blue; */
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .w {
+            width: 400px;
+        }
+
+        h3 {
+            color: #5d326c;
+            font-size: 26px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #4b2a57;
+            margin-top: 10px;
+        }
+
+        input {
+            border: 1px solid #b47ac5;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus {
+            border: 2px solid #8f5fa3;
+            box-shadow: 0 0 8px rgba(143, 95, 163, 0.4);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            height: 40px;
+            border: none;
+            border-radius: 7px;
+            background-color: #8f5fa3;
+            /* background-color: blue; */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #744882;
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        #display {
+            margin-top: 25px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            color: #4b2a57;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            white-space: pre-line;
+        }
+                input{
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 0.5rem;
+                    padding: 3px 10px;
+                    height: 2rem;
+                }
+                button{
+                    padding: 3px 10px;
+                    cursor: pointer;
+                }
+    </style>
+</head>
+<body>
+    <header class="fcx bg1">G5 sem3</header>
+    <main class="fcy">
+        <form id="form1" class="card w" style="padding: 2rem;">
+            <h3 style="text-align: center; margin-bottom: 1rem;">Myself</h3>
+            <label for="">
+                section  
+                <input type="text" name="section" id="section" placeholder="section"/>
+            </label>
+            <label for="">
+                Roll Number
+                <input type="text" name="username" id="rollNumber" placeholder="enter roll Number">
+            </label>
+            <label for="">
+                name
+                <input type="text" name="StudentName" id="StudentName" placeholder="Enter name">
+            </label>
+            <button type="submit">submit</button>
+        </form>
+        <div id="display"></div>
+    </main>
+    <footer class="fcx bg1">Aastha Garcha <br>    (2510990565)</footer>
+    
+</body>
+    <script>
+        let form1=document.querySelector("#form1");
+        let section=document.querySelector("#section");
+        let rollNumber=document.querySelector("#rollNumber");
+        let studentName=document.querySelector("#studentName");
+
+        let display=document.querySelector("display");
+        form1.addEventListener("submit",cbf);
+        function cbf(e){
+            e.preventDefault();
+            if(
+                StudentName.value.trim()==""||
+                rollNumber.value.trim()==""||
+                section.value.trim()=="")
+            {
+                alert("please provide complete details");
+            }else{
+                display.textContent=`Stamp:
+                ${Section.value}_
+                ${rollNumber.value}_
+                ${StudentName}`;
+                localStorage.setItem("section",section.value);
+                localStorage.setItem("rollNumber",rollNumber.value);
+                localStorage.setItem("studentName",StudentName.value);
+                form1.reset();
+
+            }
+            section.addEventListener("focus",cbf2);
+            function cbf2(){
+                display.textContent="";
+            }   
+        }
+    </script>
+
+</html>
