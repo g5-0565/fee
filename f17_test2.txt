@@ -1,0 +1,18 @@
+Q1: What is DOM ?
+Ans: DOM is document object model.It make the web page interactive. 
+
+Q2: what are 5 DOM manipulation functions?
+Ans:getElementbyId()
+    getElementbyClassname()
+    querySelector()
+    createElement()
+    appendchild()
+
+Q3: what is the meaning of asynchronous operation?
+ans:operations that run without blocking the other code.
+
+Q4: what is virtual dom?
+ans:it is the lightweight copy of real DOM for faster updates.
+
+Q5: how react repond fast to user actions?
+ans: it uses virtual DOM and it updates only changed elements.
