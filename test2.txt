@@ -1,0 +1,9 @@
+Test 2:
+2 most important topics:
+Min 25 Max 50 words
+Summary/Caption/Key-Words Min 2 max 5 words
+
+1. Create Operation: Adding new records to the application using forms and storing data in the database
+2. Read Operation: Fetching and displaying stored records dynamically using React components and APIs
+Key Words:
+Create, Read, Update, Delete, React
