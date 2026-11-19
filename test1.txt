@@ -1,0 +1,16 @@
+create home page :only 2 components of your project
+third party Api
+thunder client
+supabase crud app 
+
+
+
+
+
+Supabase CRUD App – Home Page Summary
+
+The Home Page provides a simple interface to manage records using Supabase as the backend.
+
+Two Components:
+1. Navbar: Provides navigation across the application.
+2. Dashboard: Displays records and options to add, update, and delete data.
